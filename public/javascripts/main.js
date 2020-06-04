@@ -22,7 +22,7 @@ var sdpConstraints = {
 
 /////////////////////////////////////////////
 
-var room = prompt('Enter room number:');
+var room = 'foo';
 // Could prompt for room name:
 // room = prompt('Enter room name:');
 
@@ -120,7 +120,7 @@ console.log('Getting user media with constraints', constraints);
 
 if (location.hostname !== 'localhost') {
   requestTurn(
-    'http://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
+    'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
   );
 }
 
