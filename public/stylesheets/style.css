@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+video {
+  max-width: 100%;
+  width: 100%;
+}
+
+#videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
