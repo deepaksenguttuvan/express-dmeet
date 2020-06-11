@@ -14,10 +14,15 @@ var turnReady;
 //   }]
 // };
 
-var pcConfig = [
-  {"url": "stun:ec2-54-176-1-181.us-west-1.compute.amazonaws.com:3478"},
-  {"url": "turn:ec2-54-176-1-181.us-west-1.compute.amazonaws.com:3478",
-  "username":"tadhackuser", "credential":"tadhackpw"}];
+var pcConfig = {
+  iceServers: [
+    {
+        urls: 'turn:ec2-54-176-1-181.us-west-1.compute.amazonaws.com:3478',
+        username: 'tadhackuser',
+        credentials: 'tadhackpw'
+    }
+  ]
+};
 
 // Set up audio and video regardless of what devices are present.
 var sdpConstraints = {
