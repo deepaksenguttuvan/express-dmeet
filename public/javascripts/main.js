@@ -217,11 +217,8 @@ function requestTurn(turnURL) {
         var turnServer = JSON.parse(xhr.responseText);
         console.log('Got TURN server: ', turnServer);
         pcConfig.iceServers.push({
-          // 'urls': 'turn:' + turnServer.username + '@' + turnServer.turn,
-          // 'credential': turnServer.password
-          url: 'turn:numb.viagenie.ca',
-          credential: 'muazkh',
-          username: 'webrtc@live.com'
+          'urls': 'turn:' + turnServer.username + '@' + turnServer.turn,
+          'credential': turnServer.password
         });
         turnReady = true;
       }
