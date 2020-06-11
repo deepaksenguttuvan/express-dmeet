@@ -8,11 +8,16 @@ var pc;
 var remoteStream;
 var turnReady;
 
-var pcConfig = {
-  'iceServers': [{
-    'urls': 'stun:stun.l.google.com:19302'
-  }]
-};
+// var pcConfig = {
+//   'iceServers': [{
+//     'urls': 'stun:stun.l.google.com:19302'
+//   }]
+// };
+
+var pcConfig = [
+  {"url": "stun:ec2-54-176-1-181.us-west-1.compute.amazonaws.com:3478"},
+  {"url": "turn:ec2-54-176-1-181.us-west-1.compute.amazonaws.com:3478",
+  "username":"tadhackuser", "credential":"tadhackpw"}];
 
 // Set up audio and video regardless of what devices are present.
 var sdpConstraints = {
@@ -118,7 +123,7 @@ var constraints = {
 
 console.log('Getting user media with constraints', constraints);
 
-if (location.hostname === 'localhost') {
+if (location.hostname !== 'localhost') {
   requestTurn(
     'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
   );
