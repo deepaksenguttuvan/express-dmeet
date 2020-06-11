@@ -120,7 +120,7 @@ console.log('Getting user media with constraints', constraints);
 
 if (location.hostname !== 'localhost') {
   requestTurn(
-    'https://turn:numb.viagenie.ca/turn?username=webrtc@live.com&key=muazkh'
+    'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
   );
 }
 
@@ -217,8 +217,11 @@ function requestTurn(turnURL) {
         var turnServer = JSON.parse(xhr.responseText);
         console.log('Got TURN server: ', turnServer);
         pcConfig.iceServers.push({
-          'urls': 'turn:' + turnServer.username + '@' + turnServer.turn,
-          'credential': turnServer.password
+          // 'urls': 'turn:' + turnServer.username + '@' + turnServer.turn,
+          // 'credential': turnServer.password
+          url: 'turn:numb.viagenie.ca',
+          credential: 'muazkh',
+          username: 'webrtc@live.com'
         });
         turnReady = true;
       }
