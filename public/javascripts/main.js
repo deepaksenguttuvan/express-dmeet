@@ -102,6 +102,7 @@ socket.on('message', function(message) {
 
 var localVideo = document.querySelector('#localVideo');
 var remoteVideo = document.querySelector('#remoteVideo');
+var wallet = document.querySelector('#wallet');
 
 navigator.mediaDevices.getUserMedia({
   audio: true,
@@ -128,7 +129,7 @@ var constraints = {
 
 console.log('Getting user media with constraints', constraints);
 
-if (location.hostname !== 'localhost') {
+if (location.hostname === 'localhost') {
   requestTurn(
     'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
   );
@@ -266,3 +267,4 @@ function stop() {
   pc = null;
   location.reload('/');
 }
+
