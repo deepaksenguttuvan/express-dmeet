@@ -9,19 +9,26 @@ var remoteStream;
 var turnReady;
 
 var pcConfig = {
-  'iceServers': [{
-    'urls': 'stun:stun.l.google.com:19302'},
-    {"urls":["stun:74.125.24.127:19302","stun:[2404:6800:4003:C03::7F]:19302"]},
-    {"urls":["turn:108.177.125.127:19305?transport=udp","turn:[2404:6800:4008:C07::7F]:19305?transport=udp","turn:108.177.125.127:19305?transport=tcp","turn:[2404:6800:4008:C07::7F]:19305?transport=tcp"],
+  'iceServers': [
+    {'urls': 'stun:stun.l.google.com:19302'},
+    {"urls": "stun:74.125.24.127:19302"},
+    { 'urls':"stun:[2404:6800:4003:C03::7F]:19302"},
+    {"urls": "turn:108.177.125.127:19305?transport=udp",
+      "username":"CNPixvcFEga+tj6cpAAYzc/s6OMTIICjBQ",
+      "credential":"L9nWUp9oIFtUTD1rLlSeGuvWbWs=",
+      "maxRateKbps":"8000"},
+      {"urls": "turn:[2404:6800:4008:C07::7F]:19305?transport=udp",
+      "username":"CNPixvcFEga+tj6cpAAYzc/s6OMTIICjBQ",
+      "credential":"L9nWUp9oIFtUTD1rLlSeGuvWbWs=",
+      "maxRateKbps":"8000"},
+      {"urls": "turn:108.177.125.127:19305?transport=tcp",
+      "username":"CNPixvcFEga+tj6cpAAYzc/s6OMTIICjBQ",
+      "credential":"L9nWUp9oIFtUTD1rLlSeGuvWbWs=",
+      "maxRateKbps":"8000"},
+      {"urls": "turn:[2404:6800:4008:C07::7F]:19305?transport=tcp",
       "username":"CNPixvcFEga+tj6cpAAYzc/s6OMTIICjBQ",
       "credential":"L9nWUp9oIFtUTD1rLlSeGuvWbWs=",
       "maxRateKbps":"8000"}
-  // },
-  // {
-  //   'urls': 'turn:18.222.165.59:3478?transport=udp',
-  //   'credential': 'deepak123',
-  //   'username': 'deepak'
-  // }
 ]
 };
 
