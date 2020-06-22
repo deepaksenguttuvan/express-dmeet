@@ -10,7 +10,9 @@ var turnReady;
 
 var pcConfig = {
   'iceServers': [{
-    'urls': 'stun:stun.l.google.com:19302'
+    'urls': 'turn:18.222.165.59:3478',
+    'username':  'deepak',
+    'credential': 'deepak123'
   }]
 };
 
