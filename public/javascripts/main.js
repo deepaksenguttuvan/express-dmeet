@@ -11,7 +11,13 @@ var turnReady;
 var pcConfig = {
   'iceServers': [{
     'urls': 'stun:stun.l.google.com:19302'
-  }]
+  },
+  {
+    'urls': 'turn:18.222.165.59:3478?transport=udp',
+    'credential': 'deepak123',
+    'username': 'deepak'
+  }
+]
 };
 
 // Set up audio and video regardless of what devices are present.
