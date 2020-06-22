@@ -120,7 +120,7 @@ console.log('Getting user media with constraints', constraints);
 
 if (location.hostname !== 'localhost') {
   requestTurn(
-    'http://18.222.165.59:3478/transport=udp?username=deepak&key=deepak123'
+    'https://18.222.165.59:3478/transport=udp?username=deepak&key=deepak123'
   );
 }
 
