@@ -10,9 +10,7 @@ var turnReady;
 
 var pcConfig = {
   'iceServers': [{
-    'urls': 'turn:18.222.165.59:3478',
-    'username':  'deepak',
-    'credential': 'deepak123'
+    'urls': 'stun:stun.l.google.com:19302'
   }]
 };
 
@@ -122,7 +120,7 @@ console.log('Getting user media with constraints', constraints);
 
 if (location.hostname !== 'localhost') {
   requestTurn(
-    'https://18.222.165.59:3478/transport=udp?username=deepak&key=deepak123'
+    'http://18.222.165.59:3478/transport=udp?username=deepak&key=deepak123'
   );
 }
 
