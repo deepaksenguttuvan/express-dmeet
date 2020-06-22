@@ -8,20 +8,10 @@ var pc;
 var remoteStream;
 var turnReady;
 
-// var pcConfig = {
-//   'iceServers': [{
-//     'urls': 'stun:stun.l.google.com:19302'
-//   }]
-// };
-
 var pcConfig = {
-  iceServers: [
-    {
-        urls: 'turn:ec2-54-176-1-181.us-west-1.compute.amazonaws.com:3478',
-        username: 'tadhackuser',
-        credentials: 'tadhackpw'
-    }
-  ]
+  'iceServers': [{
+    'urls': 'stun:stun.l.google.com:19302'
+  }]
 };
 
 // Set up audio and video regardless of what devices are present.
@@ -32,9 +22,9 @@ var sdpConstraints = {
 
 /////////////////////////////////////////////
 
-var room ;
+var room = 'foo';
 // Could prompt for room name:
-room = prompt('Enter room name:');
+// room = prompt('Enter room name:');
 
 var socket = io.connect();
 
@@ -102,10 +92,9 @@ socket.on('message', function(message) {
 
 var localVideo = document.querySelector('#localVideo');
 var remoteVideo = document.querySelector('#remoteVideo');
-var wallet = document.querySelector('#wallet');
 
 navigator.mediaDevices.getUserMedia({
-  audio: true,
+  audio: false,
   video: true
 })
 .then(gotStream)
@@ -129,7 +118,7 @@ var constraints = {
 
 console.log('Getting user media with constraints', constraints);
 
-if (location.hostname != 'localhost') {
+if (location.hostname !== 'localhost') {
   requestTurn(
     'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
   );
@@ -265,6 +254,4 @@ function stop() {
   isStarted = false;
   pc.close();
   pc = null;
-  location.reload('/');
 }
-
