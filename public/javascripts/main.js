@@ -120,7 +120,7 @@ console.log('Getting user media with constraints', constraints);
 
 if (location.hostname !== 'localhost') {
   requestTurn(
-    'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
+    'https://turn:18.222.165.59:3478/transport=udp?username=deepak&key=deepak123'
   );
 }
 
