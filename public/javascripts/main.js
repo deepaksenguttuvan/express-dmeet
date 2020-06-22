@@ -10,26 +10,15 @@ var turnReady;
 
 var pcConfig = {
   'iceServers': [
-    {'urls': 'stun:stun.l.google.com:19302'},
-    {"urls": "stun:74.125.24.127:19302"},
-    { 'urls':"stun:[2404:6800:4003:C03::7F]:19302"},
-    {"urls": "turn:108.177.125.127:19305?transport=udp",
-      "username":"CNPixvcFEga+tj6cpAAYzc/s6OMTIICjBQ",
-      "credential":"L9nWUp9oIFtUTD1rLlSeGuvWbWs=",
-      "maxRateKbps":"8000"},
-      {"urls": "turn:[2404:6800:4008:C07::7F]:19305?transport=udp",
-      "username":"CNPixvcFEga+tj6cpAAYzc/s6OMTIICjBQ",
-      "credential":"L9nWUp9oIFtUTD1rLlSeGuvWbWs=",
-      "maxRateKbps":"8000"},
-      {"urls": "turn:108.177.125.127:19305?transport=tcp",
-      "username":"CNPixvcFEga+tj6cpAAYzc/s6OMTIICjBQ",
-      "credential":"L9nWUp9oIFtUTD1rLlSeGuvWbWs=",
-      "maxRateKbps":"8000"},
-      {"urls": "turn:[2404:6800:4008:C07::7F]:19305?transport=tcp",
-      "username":"CNPixvcFEga+tj6cpAAYzc/s6OMTIICjBQ",
-      "credential":"L9nWUp9oIFtUTD1rLlSeGuvWbWs=",
-      "maxRateKbps":"8000"}
-]
+    {
+      'urls': 'stun:18.222.165.59:3478'
+    },
+    {
+      'urls': 'turn:18.222.165.59:3478',
+      'username': 'root',
+      'password': 'root@123'
+    }
+  ]
 };
 
 // Set up audio and video regardless of what devices are present.
@@ -40,9 +29,9 @@ var sdpConstraints = {
 
 /////////////////////////////////////////////
 
-var room = 'foo';
+// var room = 'foo';
 // Could prompt for room name:
-// room = prompt('Enter room name:');
+var room = prompt('Enter room name:');
 
 var socket = io.connect();
 
